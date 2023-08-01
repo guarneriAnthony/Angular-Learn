@@ -1,0 +1,57 @@
+<form #form="ngForm" (submit)="addForm()" class="mt-5">
+  <div class="mb-4">
+    <label class="form-label ms-5" for="title">Titre : </label>
+    <input [(ngModel)]="recette.title" class="form-control w-50 ms-5 shadow p-2" id="title" name="title" type="text">
+  </div>
+
+  <div class="form-group ms-5 mb-4">
+    <label for="id_category"> Catégorie :</label>
+    <select [(ngModel)]="recette.id_category" class="form-control w-25 shadow p-2" id="id_category" name="id_category">
+      <option disabled selected value="">-- Type de plat --</option>
+      <option *ngFor="let categorie of categories" [ngValue]="categorie.id">{{ categorie.name}}</option>
+    </select>
+  </div>
+
+  <div class="form-group ms-5 mb-4">
+    <label for="difficulty">Difficulté :</label>
+    <select [(ngModel)]="recette.difficulty" class="form-control w-25 shadow p-2" id="difficulty" name="difficulty">
+      <option disabled selected value="">-- Niveau de difficulté --</option>
+      <option [ngValue]="1">1</option>
+      <option [ngValue]="2">2</option>
+      <option [ngValue]="3">3</option>
+      <option [ngValue]="4">4</option>
+      <option [ngValue]="4">4</option>
+      <option [ngValue]="5">5</option>
+    </select>
+  </div>
+
+
+  <div class="mb-4">
+    <label class="form-label ms-5" for="preparation_time">Temps de préparation :</label>
+    <input [(ngModel)]="recette.preparation_time" class="form-control w-50 ms-5 shadow p-2" id="preparation_time"
+           name="preparation_time" type="number">
+  </div>
+
+  <div class="mb-4">
+    <label class="form-label ms-5" for="cooking_time">Temps de cuisson :</label>
+    <input [(ngModel)]="recette.cooking_time" class="form-control w-50 ms-5 shadow p-2" id="cooking_time" name="cooking_time"
+           type="number">
+  </div>
+
+  <div class="mb-4">
+    <label class="form-label ms-5" for="cost">Coût :</label>
+    <input [(ngModel)]="recette.cost" class="form-control w-50 ms-5 shadow p-2" id="cost" name="cost" type="number">
+  </div>
+
+  <div class="mb-4">
+    <label class="form-label ms-5" for="description">description :</label>
+    <input [(ngModel)]="recette.description" class="form-control w-25 ms-5 shadow p-2" id="description" name="description" type="text">
+  </div>
+
+  <div class="mb-4">
+    <label class="form-label ms-5" for="picture">Photo :</label>
+    <input [(ngModel)]="recette.picture" class="form-control w-25 ms-5 shadow p-2" id="picture" name="picture" type="text">
+  </div>
+
+  <button class="btn btn-primary ms-5" type="submit">Envoyer</button>
+</form>

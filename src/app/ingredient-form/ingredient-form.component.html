@@ -1,0 +1,9 @@
+<form #form="ngForm" (submit)="addIngredient()" class="mt-5">
+  <div class="mb-4">
+    <label class="form-label ms-5" for="title">Titre {{ingredient.name}}: </label>
+    <input [(ngModel)]="ingredient.name" class="form-control w-50 ms-5 shadow p-2" id="title" name="title" type="text">
+    <input [(ngModel)]="ingredient.id" name="id" type="hidden">
+  </div>
+
+  <button class="btn btn-primary ms-5" type="submit">Envoyer</button>
+</form>
